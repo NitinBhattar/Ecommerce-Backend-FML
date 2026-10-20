@@ -1,0 +1,30 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: user-service
+
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    # Shows SQL query on log when its executed
+    show-sql: true
+
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    access-token-expiration: ${JWT_ACCESS_TOKEN_EXPIRATION}
+    refresh-token-expiration: ${JWT_REFRESH_TOKEN_EXPIRATION}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL}

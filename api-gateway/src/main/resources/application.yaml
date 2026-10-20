@@ -1,0 +1,36 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: api-gateway
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    access-token-expiration: ${JWT_ACCESS_TOKEN_EXPIRATION}
+    refresh-token-expiration: ${JWT_REFRESH_TOKEN_EXPIRATION}
+
+cloud:
+  gateway:
+    discovery:
+      locator:
+        enabled: true
+
+        lower-case-service: true
+
+    route:
+      - id: USER_SERVICE
+        # lb is load balanced
+        # Gateway asks eureka to give it an available instance of USER_SERVICE.
+        uri: lb://USER_SERVICE
+        predicates:
+          - path=/user/**
+        filters:
+          - CustomRouteFilter
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL}
