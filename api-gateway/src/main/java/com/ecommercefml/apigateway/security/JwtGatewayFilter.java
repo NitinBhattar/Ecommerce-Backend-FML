@@ -24,7 +24,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class JwtGatewayFilter implements GatewayFilter, Ordered {
     private final JwtUtil jwtUtil;
-    private final PathMatcher pathMatcher = new AntPathMatcher();
+    private PathMatcher pathMatcher = new AntPathMatcher();
 
     // No verification of JWT
     private static final List<Endpoint> PUBLIC_URLS = List.of(

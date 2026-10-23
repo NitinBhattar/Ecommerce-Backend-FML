@@ -21,7 +21,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public CategoryDto createCategory(CreateCategoryDto createCategoryDto) {
         // Category already exists
-        if (!categoryRepository.existsByName(createCategoryDto.getName())) {
+        if (categoryRepository.existsByName(createCategoryDto.getName())) {
             throw new ResourceAlreadyExistsException("Category already exists");
         }
 

@@ -3,6 +3,7 @@ package com.ecommercefml.product.controller;
 import com.ecommercefml.product.dto.CategoryDto;
 import com.ecommercefml.product.dto.CreateCategoryDto;
 import com.ecommercefml.product.service.impl.CategoryService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,23 +18,23 @@ public class CategoryController {
     private final CategoryService categoryService;
 
     @PostMapping("/create")
-    public ResponseEntity<CategoryDto> createCategory(CreateCategoryDto createCategoryDto) {
+    public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody CreateCategoryDto createCategoryDto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(categoryService.createCategory(createCategoryDto));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CategoryDto> updateCategory(CategoryDto categoryDto) {
+    public ResponseEntity<CategoryDto> updateCategory(@Valid @RequestBody CategoryDto categoryDto) {
         return ResponseEntity.ok(categoryService.updateCategory(categoryDto));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteCategory(Long id) {
+    public ResponseEntity<String> deleteCategory(@PathVariable Long id) {
         categoryService.deleteCategory(id);
         return ResponseEntity.ok("Category deleted successfully");
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<CategoryDto> getCategory(Long id) {
+    public ResponseEntity<CategoryDto> getCategory(@PathVariable Long id) {
         return ResponseEntity.ok(categoryService.getCategory(id));
     }
 

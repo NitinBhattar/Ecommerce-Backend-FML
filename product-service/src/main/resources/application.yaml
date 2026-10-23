@@ -5,6 +5,10 @@ spring:
   application:
     name: product-service
 
+  cloud:
+    config:
+      enabled: false
+
   datasource:
     url: ${DATABASE_URL}
     username: ${DATABASE_USERNAME}

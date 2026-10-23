@@ -4,3 +4,20 @@ server:
 spring:
   application:
     name: inventory-service
+
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    # Shows SQL query on log when its executed
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL}

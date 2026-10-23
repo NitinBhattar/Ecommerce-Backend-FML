@@ -62,14 +62,14 @@ public class ProductController {
         return ResponseEntity.ok(productService.searchProduct(keyword, page, size));
     }
 
-    @GetMapping("/filter")
+    @GetMapping("/filter/category")
     public ResponseEntity<Page<ProductDto>> filterProductByCategory(@RequestParam Long categoryId,
                                                                     @RequestParam(defaultValue = "0") int page,
                                                                     @RequestParam(defaultValue = "10") int size) {
         return ResponseEntity.ok(productService.filterProductByCategory(categoryId, page, size));
     }
 
-    @GetMapping("/filter")
+    @GetMapping("/filter/price")
     public ResponseEntity<Page<ProductDto>> filterProductByPrice(@RequestParam BigDecimal minValue,
                                                                  @RequestParam BigDecimal maxValue,
                                                                  @RequestParam(defaultValue = "0") int page,
@@ -77,7 +77,7 @@ public class ProductController {
         return ResponseEntity.ok(productService.filterProductByPrice(minValue, maxValue, page, size));
     }
 
-    @GetMapping("/filter")
+    @GetMapping("/filter/advance")
     public ResponseEntity<Page<ProductDto>> advanceFilterProduct(@RequestParam(required = false) String keyword,
                                                                  @RequestParam(required = false) Long categoryId,
                                                                  @RequestParam(required = false) BigDecimal minValue,

@@ -37,10 +37,10 @@ public class ProductServiceImpl implements ProductService {
     @Value("${app.product.image.max-size}")
     private long maxImageSize;
 
-    @Value("${app.product.image.allowed-types}")
+    @Value("${app.product.image.allowed-types:}")
     private List<String> allowedTypes;
 
-    @Value("${app.product.image.allowed-extensions}")
+    @Value("${app.product.image.allowed-extensions:}")
     private List<String> allowedExtensions;
 
     // Path for uploading

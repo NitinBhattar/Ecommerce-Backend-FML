@@ -1,0 +1,19 @@
+package com.ecommercefml.order.enums;
+
+public enum OrderStatus {
+    PENDING,
+    PLACED,
+    CONFIRMED,
+    PROCESSING,
+    SHIPPED,
+    OUT_FOR_DELIVERY,
+    DELIVERED,
+    CANCELLED,
+    PAYMENT_FAILED,
+    RETURN_REQUESTED,
+    RETURN_PICKED,
+    RETURNED,
+    REPLACEMENT_REQUESTED,
+    REPLACEMENT_PICKED,
+    REPLACED
+}
