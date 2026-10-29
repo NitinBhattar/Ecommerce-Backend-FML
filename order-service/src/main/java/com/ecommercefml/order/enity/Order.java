@@ -19,7 +19,7 @@ public class Order {
     private Long id;
 
     @Column(unique = true, nullable = false, updatable = false)
-    private String orderNumber;
+    private String orderId;
 
     private String skuCode;
     private Integer quantity;

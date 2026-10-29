@@ -11,6 +11,6 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderResponseDto {
-    private String orderNumber;
+    private String orderId;
     private OrderStatus orderStatus;
 }

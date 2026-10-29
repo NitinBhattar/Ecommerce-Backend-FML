@@ -17,6 +17,15 @@ spring:
     # Shows SQL query on log when its executed
     show-sql: true
 
+  kafka:
+    bootstrap-servers: localhost:9092
+
+    producer:
+      # Kafka message -> String
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      # Kafka message's JSON -> Java Object
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+
 eureka:
   client:
     service-url:

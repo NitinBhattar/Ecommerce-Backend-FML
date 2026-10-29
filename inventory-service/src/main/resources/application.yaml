@@ -17,6 +17,26 @@ spring:
     # Shows SQL query on log when its executed
     show-sql: true
 
+  kafka:
+    bootstrap-servers: localhost:9092
+
+    consumer:
+      # Each message goes to only one instance of consumer, no duplicate inventory updates
+      group-id: inventory-group
+      # Where to start messages from when container starts fresh
+      # latest only gives new messages, earliest for all messages
+      auto-offset-reset: earliest
+
+      # Kafka message -> String
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      # Kafka message's JSON -> Java Object
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+
+      # Packages which are allowed to convert from JSON -> Java Object
+      properties:
+        spring.json.trusted.packages: "*"
+
+
 eureka:
   client:
     service-url:

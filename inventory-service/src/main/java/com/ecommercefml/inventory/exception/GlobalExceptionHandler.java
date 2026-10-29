@@ -25,6 +25,22 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(mp);
     }
 
+    // Ordered quantity exceeded
+    @ExceptionHandler(OrderedQuantityExceededException.class)
+    public ResponseEntity<Map<String, Object>> handleOrderedQuantityExceeded(OrderedQuantityExceededException ex) {
+        Map<String, Object> mp = Map.of("error", "Conflict", "message", ex.getMessage());
+
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(mp);
+    }
+
+    // Order already processed
+    @ExceptionHandler(OrderAlreadyProcessedException.class)
+    public ResponseEntity<Map<String, Object>> handleOrderedQuantityExceeded(OrderAlreadyProcessedException ex) {
+        Map<String, Object> mp = Map.of("error", "Conflict", "message", ex.getMessage());
+
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(mp);
+    }
+
     // Method argument for @Valid tag in requests
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, Object>> handleMethodArgumentNotValid(MethodArgumentNotValidException ex) {

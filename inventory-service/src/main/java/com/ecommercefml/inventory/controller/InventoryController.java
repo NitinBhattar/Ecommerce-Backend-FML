@@ -23,9 +23,9 @@ public class InventoryController {
         return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse<>("Inventory added successfully", inventoryResponseDto));
     }
 
-    @GetMapping("/check")
-    ResponseEntity<InventoryResponseDto> checkInventory(@Valid @RequestBody  InventoryRequestDto inventoryRequestDto) {
-        InventoryResponseDto inventoryResponseDto = inventoryService.checkInventory(inventoryRequestDto.getSkuCode());
+    @GetMapping("/{skuCode}")
+    ResponseEntity<InventoryResponseDto> checkInventory(@PathVariable String skuCode) {
+        InventoryResponseDto inventoryResponseDto = inventoryService.checkInventory(skuCode);
 
         return ResponseEntity.ok(inventoryResponseDto);
     }

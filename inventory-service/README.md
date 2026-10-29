@@ -8,12 +8,12 @@ Manages product inventory, stock availability, and inventory operations for the 
 | Method | Endpoint | Description |
 |---|---|---|
 | `POST` | `/api/inventory/add` | Add inventory for a SKU |
-| `GET` | `/api/inventory/check` | Check stock availability and quantity by SKU |
+| `GET` | `/api/inventory/{skuCode}` | Check stock availability and quantity by SKU |
 
 
 ### Tech Stack
 
-Java · Spring Boot · Spring Data JPA · MySQL
+Java · Spring Boot · Spring Data JPA · MySQL · Apache Kafka · OpenFeign
 
 ### Run Locally
 

@@ -3,6 +3,7 @@ package com.ecommercefml.inventory.mapper;
 import com.ecommercefml.inventory.dto.InventoryRequestDto;
 import com.ecommercefml.inventory.dto.InventoryResponseDto;
 import com.ecommercefml.inventory.entity.Inventory;
+import com.ecommercefml.inventory.event.OrderPlacedEvent;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
