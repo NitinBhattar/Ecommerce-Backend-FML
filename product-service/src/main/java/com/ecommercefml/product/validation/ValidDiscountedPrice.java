@@ -6,7 +6,7 @@ import jakarta.validation.Payload;
 import java.lang.annotation.*;
 
 // With ElementType.TYPE, it can be placed on class/interfaces.enums etc.
-// With  ElementType.FIELD, it can be placed on variables inside the class
+// With ElementType.FIELD, it can be placed on variables inside the class
 // ElementType.TYPE
 // ElementType.FIELD
 // ElementType.METHOD

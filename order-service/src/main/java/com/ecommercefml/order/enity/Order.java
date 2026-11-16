@@ -24,5 +24,8 @@ public class Order {
     private String skuCode;
     private Integer quantity;
     private BigDecimal price;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private OrderStatus orderStatus;
 }
