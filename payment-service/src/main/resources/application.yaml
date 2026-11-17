@@ -33,3 +33,12 @@ razorpay:
   key: ${RAZORPAY_KEY}
   secret: ${RAZORPAY_SECRET}
   webhook-secret: ${RAZORPAY_WEBHOOK_SECRET}
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+  zipkin:
+    tracing:
+      endpoint: ${ZIPKIN_URL}

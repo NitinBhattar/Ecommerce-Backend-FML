@@ -12,7 +12,7 @@ Manages user registration, authentication, and access token refreshing for the E
 | `POST` | `/api/auth/refreshAccessToken` | Refresh access token |
 
 ### Tech Stack
-Java · Spring Boot · Spring Security · JWT · MySQL
+Java · Spring Boot · Spring Security · JWT · MySQL · Micrometer Tracing · Zipkin
 
 ### Run Locally
 ```bash

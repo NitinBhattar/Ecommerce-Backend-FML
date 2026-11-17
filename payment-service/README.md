@@ -13,7 +13,7 @@ Manages payment creation, payment status, and payment gateway integration for th
 
 ### Tech Stack
 
-Java · Spring Boot · Spring Data JPA · MySQL · Razorpay · OpenFeign · Spring Cloud
+Java · Spring Boot · Spring Data JPA · MySQL · Razorpay · OpenFeign · Micrometer Tracing · Zipkin
 
 ### Run Locally
 

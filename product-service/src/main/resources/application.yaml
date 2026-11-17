@@ -52,3 +52,12 @@ eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_URL}
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+  zipkin:
+    tracing:
+      endpoint: ${ZIPKIN_URL}

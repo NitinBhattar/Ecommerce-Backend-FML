@@ -25,7 +25,7 @@ Manages product and category operations for the E-Commerce Backend, including pr
 
 
 ### Tech Stack
-Java · Spring Boot · Spring Data JPA · JPQL · MySQL
+Java · Spring Boot · Spring Data JPA · JPQL · MySQL · Micrometer Tracing · Zipkin
 
 ### Run Locally
 ```bash

@@ -1,0 +1,55 @@
+server:
+  port: 8087
+
+spring:
+  application:
+    name: notification-service
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+    consumer:
+      # Each message goes to only one instance of consumer, no duplicate inventory updates
+      group-id: notification-group
+      # Where to start messages from when container starts fresh
+      # latest only gives new messages, earliest for all messages
+      auto-offset-reset: earliest
+
+      # Kafka message -> String
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      # Kafka message's JSON -> Java Object
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+
+      # Packages which are allowed to convert from JSON -> Java Object
+      properties:
+        spring.json.trusted.packages: "*"
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: fullmetallabs2002@gmail.com
+    password: ${MAIL_PASSWORD}
+
+    # Auth for Google to know that we need to sign in
+    properties:
+      mail:
+        smtp:
+          auth: true
+
+          # TLS is for encryption
+          starttls:
+            enable: true
+
+  twilio:
+    account-sid: ${TWILIO_ACCOUNT_SID}
+    auth-token: ${TWILIO_AUTH_TOKEN}
+    from-number: ${TWILIO_NUMBER}
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+  zipkin:
+    tracing:
+      endpoint: ${ZIPKIN_URL}

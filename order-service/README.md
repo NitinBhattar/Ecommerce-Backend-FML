@@ -10,7 +10,7 @@ Manages order creation and order processing for the E-Commerce Backend.
 
 ### Tech Stack
 
-Java · Spring Boot · Spring Data JPA · MySQL · Apache Kafka · OpenFeign
+Java · Spring Boot · Spring Data JPA · MySQL · Apache Kafka · OpenFeign · Micrometer Tracing · Zipkin
 
 ### Run Locally
 

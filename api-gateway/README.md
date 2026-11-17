@@ -9,7 +9,7 @@ Centralized entry point for the E-Commerce Backend, built with Spring Cloud Gate
 - Authenticated user header propagation
 
 ### Tech Stack
-Java · Spring Boot · Spring Cloud Gateway · Eureka · JWT
+Java · Spring Boot · Spring Cloud Gateway · Eureka · JWT · Micrometer Tracing · Zipkin
 
 ### Run Locally
 ```bash

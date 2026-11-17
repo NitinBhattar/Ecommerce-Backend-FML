@@ -13,7 +13,7 @@ Manages product inventory, stock availability, and inventory operations for the 
 
 ### Tech Stack
 
-Java · Spring Boot · Spring Data JPA · MySQL · Apache Kafka · OpenFeign
+Java · Spring Boot · Spring Data JPA · MySQL · Apache Kafka · OpenFeign · Micrometer Tracing · Zipkin
 
 ### Run Locally
 
