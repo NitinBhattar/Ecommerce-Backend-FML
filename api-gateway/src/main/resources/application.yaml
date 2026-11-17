@@ -25,7 +25,7 @@ cloud:
         # Gateway asks eureka to give it an available instance of USER_SERVICE.
         uri: lb://USER_SERVICE
         predicates:
-          - path=/user/**
+          - path=api/users/**
         filters:
           - CustomRouteFilter
 

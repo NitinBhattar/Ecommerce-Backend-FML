@@ -22,7 +22,7 @@ public class ImageServeController {
     private final ImageService imageService;
 
     @GetMapping("/{fileName}")
-    public ResponseEntity<Resource> getImage(@PathVariable String fileName) throws IOException {
+    public ResponseEntity<Resource> getImage(@PathVariable("fileName") String fileName) throws IOException {
         Resource resource = imageService.getImage(fileName);
 
         // MediaType.APPLICATION_OCTET_STREAM is generic binary stream

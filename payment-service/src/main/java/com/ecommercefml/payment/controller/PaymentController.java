@@ -22,12 +22,12 @@ public class PaymentController {
     }
 
     @GetMapping("/order/{orderId}")
-    public ResponseEntity<PaymentResponseDto> getPaymentByOrderId(@RequestParam String orderId) {
+    public ResponseEntity<PaymentResponseDto> getPaymentByOrderId(@PathVariable("orderId") String orderId) {
         return ResponseEntity.ok(paymentService.getPaymentByOrderId(orderId));
     }
 
     @PutMapping("/{paymentId}/status")
-    public ResponseEntity<PaymentResponseDto> updatePaymentStatus(@RequestParam Long paymentId, @Valid @RequestBody PaymentStatusUpdateRequestDto paymentStatusUpdateRequestDto) {
+    public ResponseEntity<PaymentResponseDto> updatePaymentStatus(@PathVariable("paymentId") Long paymentId, @Valid @RequestBody PaymentStatusUpdateRequestDto paymentStatusUpdateRequestDto) {
         return ResponseEntity.ok(paymentService.updatePaymentStatus(paymentId, paymentStatusUpdateRequestDto));
     }
 }

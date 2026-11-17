@@ -28,13 +28,13 @@ public class CategoryController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteCategory(@PathVariable Long id) {
+    public ResponseEntity<String> deleteCategory(@PathVariable("id") Long id) {
         categoryService.deleteCategory(id);
         return ResponseEntity.ok("Category deleted successfully");
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<CategoryDto> getCategory(@PathVariable Long id) {
+    public ResponseEntity<CategoryDto> getCategory(@PathVariable("id") Long id) {
         return ResponseEntity.ok(categoryService.getCategory(id));
     }
 
